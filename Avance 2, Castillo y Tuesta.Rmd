@@ -1,0 +1,501 @@
+---
+title: "Avance 2"
+date: "`r Sys.Date()`"
+author: Castillo, Angie y Tuesta, Natalie
+output:
+        rmdformats::readthedown:
+                code_folding: show
+                self_contained: true
+                thumbnails: false
+                lightbox: false
+pkgdown:
+as_is: true
+---
+
+## Datos generales sobre el presente estudio
+
+### Elección del tema
+
+Análisis del impacto de factores económicos y políticos en la probabilidad de ocurrencia una protesta pública y su influencia sobre la duración total de las mismas durante 2020 y 2021, los años de la pandemia por COVID 19
+
+### Repositorio de trabajo online
+
+https://github.com/castilloytuesta/data_estadistica2
+
+### Introducción
+
+Estos últimos años han generado un cambió en la forma de realizar nuestras vidas diarias debido a la existencia de una crisis sanitaria como el COVID 19 durante el 2020 y 2021. A partir de esta nueva enfermedad, se han tomado medidas de protección como el distanciamiento social y la prohibición de las reuniones y concentraciones masivas debido al temor al contagio. Sin embargo, esto no ha impedido a la ciudadanía a salir a protestar por las diferentes deficiencias estructurales del Estado.  Las diversas protestas que se han realizado han recibido diversas críticas, tanto positivas como negativas. Por un lado, algunas han sido reconocidas y elogiadas por el ejercicio de derechos ciudadanos y su búsqueda de una mejoría en el desempeño del Estado. Empero, por otro lado, otras señalaban más la preocupación del alza de los contagios debido a estas protestas masivas, usando estos argumentos para criminalizar a los protestantes. 
+
+Por ello que, frente a una coyuntura tan crítica, el presente trabajo busca analizar qué factores influyen en la probabilidad de que se realice una protesta durante la pandemia por el covid 19  a pesar de la crisis sanitaria que se vive. En ese sentido el presente trabajo busca encontrar como pregunta principal  “¿qué factores económicos y/o políticos predicen de mejor manera la probabilidad de que ocurra una protesta pública durante 2020-2021?”. Así mismo frente a lo ya planteado, también se buscará responder cuál de los dos tipos de factores, políticos o económicos, predice de mejor manera el tiempo de duración en semanas de los episodios de protesta pública en 2020-2021.
+
+De esta forma el objetivo general del presente trabajo es evaluar la pertinencia de ambos grupos de variables independientes, políticas y económicas, en la probabilidad de que ocurran episodios de protesta pública, además de su capacidad explicativa sobre la duración acumulada en semanas de los episodios de protesta durante 2020-2021. Para esto se plantea dos objetivos específicos: analizar el impacto de los factores económicos y políticos  y evaluar el poder explicativo de las variables independientes. Para el primer objetivo se buscará crear modelos estadísticos de predicción que permitan analizar la capacidad explicativa de ambos tipos de factores políticos y económicos en las variables dependientes propuestas en este estudio. Por otro lado, en el segundo objetivo específico se busca crear indicadores para ambos grupos de criterios predictores, económicos y políticos, que permitan evaluar su poder explicativo sobre las dos variables independientes propuestas en este estudio.  
+
+Para ello, se sustenta que las variables referentes a las deficiencias socioeconómicas y estructurales del Estado predicen de mejor manera la probabilidad de ocurrencia de realización de marchas y protestas a nivel mundial durante los años de la pandemia (2020-2021). Para la segunda pregunta, se analiza que las semanas de duración de los episodios de protesta es predicha de mejor forma por factores políticos antes que económicos. Para cumplir con los objetivos mencionados, la investigación tendrá como base información teórica y los métodos estadísticos que respondan de la manera más adecuada al tipo de variables dependientes, tales como el modelo de  regresión logística binomial y el modelo de regresión lineal múltiple respectivamente.
+
+### Casos a analizar
+
+Países alrededor del mundo durante 2020-2021, los años de la pandemia por COVID 19.
+
+### Descripción del contexto e importancia del tema
+
+Desde el inicio de la pandemia por el nuevo coronavirus hasta el día de hoy, el mundo ha cambiado radicalmente. Tal es así que muchas personas, medios de comunicación y personajes políticos suelen denominar la situación actual como una “nueva normalidad”. Como tal, esta ha supuesto comprender múltiples escenarios desde un enfoque distinto. Ejemplo de ello es la forma en la que la ciudadanía ejerce y demanda el cumplimiento de sus derechos civiles. Durante el 2020 y lo que va del 2021, hemos sido testigos de la ocurrencia de manifestaciones y movilizaciones públicas que se han realizado alrededor del mundo. 
+
+Dichas protestas ciudadanas tuvieron múltiples motivos como la precariedad de la infraestructura del sistema de salud, cambios constitucionales y/o de gobierno, demandas de justicia, etc. Sin embargo, estas manifestaciones fueron objeto de crítica debido al contexto en el que estaban aconteciendo. Distintas personalidades y medios conocidos evaluaron la posibilidad de que la concurrencia de personas en una protesta podría ocasionar un alza en la curva de contagios del COVID-19. Mientras que especialistas reconocidos se hacían esta pregunta en Perú (Huerta, 2020), un artículo de The New York Times señalaba los peligros de la protesta en pandemia para Estados Unidos (Rabin, 2020).
+
+Por tal razón, abordaremos este tema para poder comprender cuál es la probabilidad de que se realicen, frente a que no se lleven a cabo, protestas durante 2020 y 2021, los años de la pandemia por COVID-19. A partir de ello, también se buscará cuáles fueron los factores que determinaron una mayor o menor duración de estas manifestaciones en el espacio público, según la cantidad de semanas acumuladas en protesta, no necesariamente consecutivas, dentro de los 184 países a analizar. Las variables predictoras que estarán implicadas en este estudio serán de dos tipos: económicas o políticas.  Para ello, analizaremos el comportamiento de las variables dependientes “ocurrencia de episodios de protesta pública” y “duración acumulada en semanas de los episodios de protesta pública” por caso, durante los años 2020 y 2021 en 184 países del mundo.
+
+### Revisión de la literatura
+
+En la revisión de la literatura, podemos encontrar diferentes textos y noticias que hablan sobre las causas y razones por las cuales la ciudadanía salió a protestar durante 2020 y 2021, los años de duración de la pandemia por COVID-19. La primera fuente es el texto “#Chiledespertó: causas del estallido social en Chile” de César Jiménez-Yañez, que narra las diversas protestas que ocurrieron en estos últimos años usando el caso específico de Chile. Sin embargo, también menciona más países en los cuales también se han presentado protestas públicas. Al evaluar más casos, revela un factor importante: todos estos países del estudio tienen factores en común en todas estas movilizaciones, demandas y protestas sociales. Además, se señala que el surgimiento de estas protestas son resultado del descontento social de la ciudadanía. Uno de los primeros factores a considerar  “tiene que ver con el manejo y la redistribución del gasto público y su directa relación con el mejoramiento de la calidad de vida; es decir, estos gobiernos, todos democráticos y neoliberales, han sido ineficientes en el manejo del recurso y en el diseño de políticas públicas acertadas, y esto se deriva de un segundo factor, la corrupción.” (Jimenez - Yañez 2020: 954). 
+
+Es así como considera factores económicos y políticos que afectan a la población que  generan un descontento ciudadano siendo un posible motivo de que salgan a protestar. Estos factores económicos y políticos se vuelven factores comunes en diferentes países del mundo a pesar de que cada país tiene sus particularidades. Los elementos comunes más resaltantes son sus políticas económicas de recorte de gasto público, las reformas laborales de pensiones y de subsidios así como el aumento a los impuestos lo que ha “disminuido aún más el ingreso (sueldos/salarios mínimos bajos), promoviendo una situación de desigualdad, vulnerabilidad social y miedo económico.” (Jimenez - Yañez 2020:955)
+
+Otra fuente que consultamos fue la de Billion y Ventura. Esta menciona una idea similar a Jimenez argumentando que “encontramos en la mayoría de los países en que se desarrollan los movimientos de protesta características comparables.”(Billion y Ventura 2020). Así como en el texto anterior, se mencionan razones económicas como el desarrollo de una brecha más grande con respecto a las desigualdades sociales, el decrecimiento de la economía o los múltiples conflictos económicos que suceden en el país. “El hecho de que los Estados no hayan resuelto estas contradicciones ha socavado la confianza de la población en las instituciones y el cuerpo político” (Billion y Ventura 2020). Mediante ello podemos ver que la desconfianza en el Estado aumenta cada vez más y la situación económica solo empeora esta situación, pues afecta directamente a las familias. 
+
+Asimismo, factores políticos como la corrupción y el beneficio de las elites son considerados ambos factores principales que causan estallidos sociales. “Los movimientos de protesta de la ola actual, en el marco específico de cada contexto nacional, proceden de un fenómeno de acumulación larga y multifactorial de causas de descontento. ... Si bien estos últimos juegan el rol de detonador impredecible, los movimientos en realidad son siempre activados por el poder político que abusa de la paciencia popular.” (Billion y Ventura 2020). Esto solo nos demuestra cómo estos factores económicos y sociales son de importancia para la probabilidad de surgimiento de una protesta. 
+
+Con respecto a la literatura sacada de cadenas de noticias e investigación, podemos encontrar que BBC menciona que “... por segundo año consecutivo, el coronavirus hizo diferente las protestas y marchas por el Día Internacional de los Trabajadores, en el contexto de una pandemia que ha destruido los medios de vida y trastornado las economías de todo el mundo. En muchos países, se desplegó un gran número de policías para hacer frente a un posible desorden y garantizar que se observasen las restricciones del coronavirus.” (BBC 2021) Mostrándonos así que existe inconformidad económica en los ciudadanos lo que los motiva a salir a las calles a pesar de la existencia de una pandemia. 
+
+Así mismo en las noticias del 2020 de DW news se expone el caso chileno: “vuelven las protestas violentas en Santiago de Chile a pesar del confinamiento”. Esto es debido a las brechas sociales y problemas políticos que existen en este país. Así mismo los ciudadanos mencionan que no es contra  la cuarentena sino contra el hambre, esto debido a la gran ausencia del Estado y sus políticas fallidas que no pudieron responder a la emergencia de la pandemia. Como muestra de ello es que desde hace meses varias actividades -especialmente el comercio, construcción y servicios- han sido afectadas por las medidas impuestas para hacer frente a la epidemia, contexto que se repite en múltiples países. Es así como la pandemia ha sacado los problemas estructurales que cada Estado tiene particularmente, esto solo genera que a pesar de la crisis sanitaria los ciudadanos salgan a ejercer su derecho de protestar y muestran su inconformidad con el sistema a pesar de los peligros de la pandemia. 
+
+Finalmente, también debemos considerar la investigación de Word Protest donde nos señalan puntualmente cuáles podrían ser estas causas de las protestas. En el sector económico señalan puntualmente que han existido entre el 2006 y 2013 “488 protestas sobre cuestiones relacionadas con la reforma de los servicios públicos, justicia fiscal, trabajo/mejores salarios, desigualdad, pobreza/bajo nivel de vida, reforma agraria, reforma de pensiones, precios altos de la energía y combustible, precios altos de los alimentos, y vivienda” (Ortiz y otros 2013). Siendo estos factores económicos importantes a considerar y que ya han sido mencionados anteriormente. Además en el sector político se menciona que existieron “376 protestas sobre la falta de democracia real, influencia empresarial/desregulación/privatización, corrupción, fallo del sistema legal al impartir justicia, transparencia y rendición de cuentas, vigilancia de la ciudadanía, y antiguerra/complejo industrial militar.  (Ortiz y otros 2013). Como hemos visto ya estos factores políticos se han repetido a lo largo de la investigación de fuentes literarias, siendo variables importantes a considerar en la investigación. 
+
+### Factores asociados al problema de interés
+
+En función a la revisión bibliográfica, definimos que los factores asociados al problema de interés están dirigidos a temas sobre desigualdad, manejo ineficiente de recursos y cumplimiento deficiente del rol social del Estado. Asimismo, la bibliografía consultada menciona problemas como la corrupción o el despliegue de las fuerzas policiales para presentarse (y, en ocasiones, reprimir) a los manifestantes. Estos nos ayudarán a predecir el comportamiento de nuestras variables dependientes “ocurrencia de episodios de protesta pública” y “duración acumulada en semanas de los episodios de protesta” durante 2020 y 2021, los años de la pandemia por COVID-19 en el mundo.
+
+Para ello, tomaremos en cuenta factores económicos como la proporción de desempleados del % del total de la fuerza nacional de trabajo en el país en cuestión. Otros aspectos a considerar serán la libertad económica de estos países, el gasto público por parte del Estado y la carga tributaria como impuestos, además del número de países en los que ya hubo protestas por motivos de índole económica. Respecto a factores políticos que afectan a nuestra variable dependiente, consideraremos los países en los que ya hubo un episodio de manifestaciones políticas en el espacio público motivadas por el descontento frente a actos de corrupción u otros motivos políticos, la respuesta represiva y violenta del Estado en alguna manifestación previa, el índice de probidad (la transparencia e integridad) del gobierno, y si es que las movilizaciones fueron desatadas por temas relacionados con la pandemia por COVID-19.
+
+### Objetivos del presente reporte 
+
+**Objetivo general**
+
+Evaluar la pertinencia de ambos grupos de variables independientes, políticas y económicas, en la probabilidad de que ocurran episodios de protesta pública, además de su capacidad explicativa sobre la duración acumulada en semanas de los episodios de protesta durante 2020-2021.
+
+**Objetivos específicos**
+
+- Crear modelos estadísticos de predicción que permitan analizar la capacidad explicativa de ambos tipos de factores políticos y económicos en las variables dependientes propuestas en este estudio.
+
+- Crear indicadores para ambos grupos de criterios predictores, económicos y políticos, que permitan evaluar su poder explicativo sobre las dos variables independientes propuestas en este estudio. 
+
+### Pregunta e hipótesis de investigación
+
+Frente a todo lo anterior, el presente trabajo busca encontrar cuáles serían los factores que llevaron a los distintos países del mundo a protestar en las calles durante la pandemia por COVID-19. Por tanto, nuestra primera pregunta de investigación será: “¿qué factores económicos y/o políticos predicen de mejor manera la probabilidad de que ocurra una protesta pública durante 2020-2021?”. En función a ello, se formuló la segunda cuestión: “Entre estos dos tipos de factores, ¿cuál predice de mejor manera el tiempo de duración en semanas de los episodios de protesta pública en 2020-2021?”. 
+
+Frente a esto, se sostienen dos hipótesis. Para la primera pregunta, se sustenta que las variables en función a las deficiencias socioeconómicas y estructurales del Estado predicen de mejor manera la probabilidad de ocurrencia de realización de marchas y protestas a nivel mundial durante los años de la pandemia (2020-2021). Para la segunda pregunta, se arguye que la cantidad total de semanas, no necesariamente consecutivas, de duración de los episodios de protesta durante los años de la pandemia es predicha de mejor forma por factores políticos antes que económicos.
+
+## Análisis descriptivo de las variables a utilizar
+
+### Preparación de la data
+
+```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+library(rio)
+data<-import("https://github.com/castilloytuesta/data_estadistica2/raw/main/datacastilloytuesta.xlsx")
+
+names(data)
+str(data)
+
+```
+
+_**ACONDICIONAMIENTO DE LAS VARIABLES**_
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# Variables factor
+data[,c(5, 7:13, 15)]=lapply(data[,c(5, 7:13, 15)], as.factor)
+
+# Variables numéricas
+data[,c(2:4, 6, 14, 16:21)]=lapply(data[,c(2:4, 6, 14, 16:21)], as.numeric)
+
+# Renombramos los valores perdidos
+data[data == "NA"] <- NA
+
+```
+
+_**CREACIÓN DE LA VARIABLE DEPENDIENTE 1**_
+
+VD: Ocurrencia de episodios de protesta pública
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# Generamos una variable que incluya 2020 y 2021
+data$p<- data$protestas2020+data$protestas2021
+summary(data$p)
+
+# Recodificamos
+library(car)
+data$protesta<-car::recode(data$p, "0='No hubo protestas'; 1:6= 'Sí hubo protestas'")
+
+# Dicotomizamos
+str(data$protesta)
+data$protesta<-as.factor(data$protesta)
+
+table(data$protesta)
+
+```
+
+_**CREACIÓN DE LA BASE PARA VARIABLES ECONÓMICAS**_
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# Creamos una nueva sección
+library(dplyr)
+eco<-select(data, pais, protesta, totalprot_sem, motivo_econ, pbi_percap_dol,jov_desocupados, desemp_total, pob_urb, libertad_econ2021, gasto_pub, impuestos)
+str(eco)
+
+# Preparamos la variable "protesta por motivo económico"
+library(car)
+str(eco$motivo_econ)
+eco$motivo_econ<-car::recode(eco$motivo_econ, "2=1; 3=1; 4=1")
+levels(eco$motivo_econ)<- c("No se aprecia", "Sí se aprecia")
+
+table(eco$motivo_econ)
+
+```
+
+_**CREACIÓN DE LA BASE PARA VARIABLES POLÍTICAS**_
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# Creamos una nueva sección
+library(dplyr)
+pol<-select(data, pais, protesta, totalprot_sem, protesta_vig, motivo_pol, contra_corrpt, prot_sig, rptaviolenta_gob, prot_larga, prot_covid, probidad_gob, mascienmll_asist)
+str(pol)
+
+# Recodificamos las variables para que sean dicotómicas
+library(car)
+
+# Variable "Protesta vigente"
+pol$protesta_vig<- car::recode(pol$protesta_vig, "1:4=1")
+levels(pol$protesta_vig)<- c("No se aprecia", "Sí se aprecia")
+table(pol$protesta_vig)
+
+# Variable "Protesta con motivación política"
+pol$motivo_pol<- car::recode(pol$motivo_pol, "1:4=1")
+levels(pol$motivo_pol)<- c("No se aprecia", "Sí se aprecia")
+table(pol$motivo_pol)
+
+# Variables restantes
+pol[,c(6:10, 12)]=lapply(pol[,c(6:10, 12)], car::recode, "1:4=1")
+levels(pol$contra_corrpt)<- c("No se aprecia", "Sí se aprecia")
+levels(pol$prot_sig)<- c("No se aprecia", "Sí se aprecia")
+levels(pol$rptaviolenta_gob)<- c("No se aprecia", "Sí se aprecia")
+levels(pol$prot_larga)<- c("No se aprecia", "Sí se aprecia")
+levels(pol$prot_covid)<- c("No se aprecia", "Sí se aprecia")
+levels(pol$mascienmll_asist)<- c("No se aprecia", "Sí se aprecia")
+
+```
+
+### Interpretación de las medidas de tendencia central y dispersión
+
+#### _**VARIABLES DEPENDIENTES**_
+
+Hemos empleado esta frase en plural porque, aunque nuestra primera variable dependiente es "ocurrencia de episodios de protesta pública" durante 2020-2021, nuestro estudio también pretende evaluar la "duración acumulada en semanas de los episodios de protesta" en este periodo de tiempo. Asimismo, cabe aclarar que estas dos tienen las mismas características tanto en la base de datos de variables económicas (eco) como en la de políticas (pol). Por tanto, cuando sea pertinente (por ejemplo, en este análisis descriptivo), utilizaremos las variables que están en la data general. Sin embargo, al momento de crear los modelos de predicción, se usarán las variables en función al data.frame con el que se esté trabajando, ya sea eco o pol.
+
+#### Variable dependiente "Ocurrencia de episodios de protesta pública"
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# Gráfico 1: Boxplot "Ocurrencia de episodios de protesta pública"
+library(tidyverse)
+data%>%
+   filter(!is.na(protesta)) %>%
+     ggplot(aes(x= protesta, fill=protesta)) + 
+        geom_bar(width=0.3, col = "black", fill = "light blue") +
+          xlab (NULL) + ylab ("Número de países") + 
+            ggtitle("Gráfico 1: Ocurrencia de episodios de protesta pública")
+
+```
+
+Según el gráfico 1, la cantidad de países en los que sí hubo protestas no difiere significativamente de aquellos en los que no se produjeron este tipo de manifestaciones en el espacio público. Mientras que los primeros sobrepasan los 80 países, este valor es menor que el de los segundos, puesto que estos están mucho más cerca de ser un aproximado de 90 países. En ese sentido, notamos que en los dos años de la pandemia por COVID-19, 2020 y 2021, no hubo una reducción considerable de los episodios de protesta, a pesar de las medidas de aislamiento social que se establecieron en distintos lugares del mundo. 
+
+Sin embargo, para analizar este caso, debemos comprender que una ausencia de protestas no significa necesariamente que las personas tomaron una libre decisión de no salir al espacio público para hacer oir sus demandas. Existe una posibilidad que algunos casos sean Estados con características autocráticas, cuyos ciudadanos no pueden ejercer sus derechos políticos como en otros países del mundo. En ese sentido, parte de este estudio busca entender bajo qué condiciones, sean factores económicos o políticos, se gestan los episodios de protesta, más aún cuando el mundo pasaba por una pandemia global debido a un virus mortal.
+
+#### Variable dependiente "Duración acumulada en semanas de los episodios de protesta pública de 2020 y 2021"
+
+*La cantidad de semanas que maneja esta variable por país no es necesariamente consecutiva. Lo que esta mide es cuántas semanas de protesta acumuló cada país durante el periodo entre 2020 y 2021, que son los años de la pandemia por COVID-19.
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+library(tidyverse)
+
+# Medidas de tendencia central
+summary(data$totalprot_sem)
+
+# Medidas de dispersión
+sd(data$totalprot_sem, na.rm = T)
+IQR(data$totalprot_sem, na.rm = T)
+
+# Gráfico 2: Boxplot "Duración acumulada en semanas de los episodios de protesta de 2020 y 2021"
+data%>%
+   filter(!is.na(totalprot_sem)) %>%
+     ggplot(aes(x= totalprot_sem, fill=totalprot_sem)) + 
+        geom_boxplot(width=0.5, col = "black", fill = "light blue") +
+          xlab (NULL) + ylab (NULL) + 
+            ggtitle("Gráfico 2: Duración acumulada en semanas de los episodios de protesta de 2020 y 2021")
+
+```
+
+Entre los países en los que sí hubo protestas durante 2020 y 2021, el promedio de la duración acumulada en semanas de los episodios de protesta de 2020 y 2021 fue de 4.49 semanas, no necesariamente consecutivas. Es decir, un aproximado de 1.1225 meses. Este valor alto probablemente se explica a partir de la presencia de valores extremos, puesto que el 50% de los datos no sigue esta tendencia. Según la mediana, la mitad de los casos presentan un tiempo acumulado de 0 semanas de protesta durante el periodo de dos años que comprenden el marco temporal de este estudio. Esto se debe a que, según el gráfico 1, la cantidad de países en los que no hubo protestas durante 2020 y 2021 es mayor a la del grupo de los que no pasaron por estas manifestaciones públicas. Empero, identificamos que, al llegar al 75% acumulado en el tercer cuartil, este valor aumenta a 4 semanas (1 mes de protestas) no necesariamente consecutivas.
+
+Si nos fijamos en el valor máximo, este escala hasta 68.14 semanas, no necesariamente consecutivas, lo cual equivale a 17.03 meses acumulados de protesta pública en un periodo de dos años entre 2020 y 2021. Este valor, a comparación del tercer cuartil que llega a 4 y la media a 4.49, confirma la gran dispersión que existe entre los datos de esta variable. Asimismo, según la desviación estándar, esta separación sería de 10.89, mientras que el rango intercuartílico nos devuelve un valor de 4 semanas de diferencia entre el 25% del límite superior de los datos y el 75% restante. Estas premisas son confirmadas por el gráfico 2. Este boxplot, de la misma manera que el summary, demuestra que la mayoría de los datos se concentra en los valores más bajos, entre las categorías de 0-4. Es decir, hasta el cuartil 3, un gran grupo de los casos no sobrepasa las 5 semanas, no necesariamente consecutivas, de protesta. 
+
+De la misma manera, el gráfico 2 confirma las sospechas de la presencia de valores extremos. En este caso, notamos una asimetría positiva. Los outliers van desde los casos que acumularon un total mayor a las 10 semanas de protesta, hasta aquellos que sobrepasaron las 60 semanas y casi alcanzaron las 70 (aprox 17.5 meses de episodios de protesta no necesariamente consecutivos). Frente a ello, se justifica que los valores e indicadores de desviación estándar alcancen números altos. Por ejemplo, la desviación estándar, que marcaba una distancia de 10.89 semanas entre caso y caso. Como consecuencia, se explica que el promedio de esta variable dependiente presente un valor tan alto como 4.49 semanas (aprox 1.1225 meses de episodios de protesta no necesariamente consecutivos), tomando en cuenta que hay más países en los que no hubo ninguna manifestación pública durante 2020 y 2021.
+
+#### _**VARIABLES INDEPENDIENTES**_
+
+**ECONÓMICAS**
+
+#### Variable independiente "Índice de libertad económica 2021"
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# Medidas de tendencia central
+summary(eco$libertad_econ2021)
+
+# Medidas de dispersión
+sd(eco$libertad_econ2021, na.rm = T)
+IQR(eco$libertad_econ2021, na.rm = T)
+
+# Gráfico 2: Boxplot "Índice de libertad económica 2021"
+library(tidyverse) 
+eco%>%
+   filter(!is.na(libertad_econ2021)) %>%
+     ggplot(aes(x= libertad_econ2021, fill=libertad_econ2021)) + 
+        geom_boxplot(width=0.5, col = "black", fill = "light blue") +
+          xlab (NULL) + ylab (NULL) + 
+            ggtitle("Gráfico 3: índice de libertad económica")
+
+```
+
+Según las medidas de tendencia central, el índice de libertad económica de los países tiene una media de 61.68 puntos de 100. Esto significa que, en la mayoría de casos, no hay una resistencia frente al comercio con países del exterior. Asimismo, notamos que el valor máximo es de 89.7, mientras que el mínimo, el cual simboliza a los países con medidas más restrictivas, muestra un valor de 5.20 de libertad económica. No obstante, como notamos en el boxplot, una abrumadora mayoría se encuentra entre una puntuación media. Tal es así que el 75% de los casos alcanza un 69.15 sobre 100 en este índice.
+
+A diferencia de otras variables, la media no se ve severamente afectada por la asimetría de la variable. Es decir, aunque hay valores extremos positivos y negativos (a ambos lados del gráfico), el promedio no se aleja significativamente de los cuartiles. Así, mientras que el primero es de 61.68, los otros son 55.65 (q1), 61.90 (q2) y 69.15 (q3). Esto reafirma que una gran cantidad de países juega bajo reglas similares de comercio, a pesar de que haya diferencias culturales y políticas entre ellos.
+
+#### Variable independiente "Gasto público"
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# Medidas de tendencia central
+summary(eco$gasto_pub)
+
+# Medidas de dispersión
+sd(eco$gasto_pub, na.rm = T)
+IQR(eco$gasto_pub, na.rm = T)
+
+# Gráfico 2: Boxplot "Índice de libertad económica 2021"
+library(tidyverse) 
+eco%>%
+   filter(!is.na(gasto_pub)) %>%
+     ggplot(aes(x= gasto_pub, fill=gasto_pub)) + 
+        geom_boxplot(width=0.5, col = "black", fill = "light blue") +
+          xlab (NULL) + ylab (NULL) + 
+            ggtitle("Gráfico 4: gasto público por país")
+
+```
+
+Según las medidas de tendencia central, el gasto público alcanza un promedio de 66.89 por país. Asimismo, notamos que el valor máximo es de 96 del PBI, mientras que el mínimo muestra un valor de 0 en gasto público. Sin embargo, la cantidad de dinero que destina un país a su gasto público no determina la efectividad de las medidas o proyectos que propone. De todas maneras, reconocemos que la mayoría se encuentra en un nivel medio, puesto que esta variable nos demuestra que el 50% de países tiene un gasto público de 71.10 del PBI. Esto se confirma en el boxplot, puesto que el grueso de los datos se encuentra entre el intervalo de un poco más de 50 hasta más de 80 en gasto público sobre el total del PBI.
+
+Sobre la asimetría, en este caso, esta está marcadamente estirada hacia la izquierda. Aquello nos demuestra la existencia de valores atípicos en los cuales el gasto público es menor al promedio de los demás países. Así, encontramos casos en los que este valor llega hasta, aproximadamente, 20, 10 o, incluso, 0 de gasto público frente al total del PBI nacional. Debido a ello, la separación entre los datos es amplia, lo cual se demuestra entre la diferencia del 25% superior de los datos (q1) frente al 75% restante (q3), que es de 30.225. De la misma manera, hay valores extremos positivos, que superan un 95 de gasto público sobre el total del PBI de los países en cuestión.
+
+
+#### Variable independiente "Carga tributaria por país"
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# Medidas de tendencia central
+summary(eco$impuestos)
+
+# Medidas de dispersión
+sd(eco$impuestos, na.rm = T)
+IQR(eco$impuestos, na.rm = T)
+
+# Gráfico 2: Boxplot "Índice de carga tributaria por país"
+library(tidyverse) 
+eco%>%
+   filter(!is.na(impuestos)) %>%
+     ggplot(aes(x= impuestos, fill= impuestos)) + 
+        geom_boxplot(width=0.5, col = "black", fill = "light blue") +
+          xlab (NULL) + ylab (NULL) + 
+            ggtitle("Gráfico 5: índice de carga tributaria por país")
+
+```
+
+Según las medidas de tendencia central, el índice de carga tributaria por país tiene una media de 77.71. A pesar de la existencia de valores extremos, esta no se ve afectada porque los outliers existen de ambos lados de la gráfica. Así, este valor no es radicalmente diferente del primer, segundo y tercer cuartil, que son 70.65, 78.90 y 87.15 respectivamente. Como podemos apreciar, en general, los países tienen una carga tributaria media-alta. Empero, el valor mínimo es 0, por lo que interpretamos que debe existir un país en el que no existan imposiciones tributarias de ningún tipo. Asimismo, notamos que el valor máximo es 100. Por tanto, al contrario del caso anterior, estos representan a los países donde existe un número elevado de regulaciones e imposiciones a los bienes, negocios, etc.
+
+En ese sentido, la separación entre datos es evidente. Según la desviación estándar, los datos tienen una separación de 13.53 entre sí. La diferencia entre el 25% superior de datos y el 75% restante apoya este cálculo, pues el rango intercuartílico es de 16.5. Adicionalmente, si nos remitimos al boxplot, confirmamos estas premisas. Notamos que la mayoría de los datos están entre 70 y 80 aproximadamente, además de que los valores extremos se encuentran a ambos lados del gráfico. Mientras que los outliers negativos alcanzan valores ligeramente menores que 50 y el cero absoluto, los positivos se acercan y llegan al máximo valor posible: 100.
+
+#### Variable independiente "Proporción de desempleados del total de trabajadores"
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# Medidas de tendencia central
+summary(eco$desemp_total)
+
+# Medidas de dispersión
+sd(eco$desemp_total, na.rm = T)
+IQR(eco$desemp_total, na.rm = T)
+
+# Gráfico 2: Boxplot "Proporción de desempleados del total de trabajadores"
+library(tidyverse) 
+eco%>%
+   filter(!is.na(desemp_total)) %>%
+     ggplot(aes(x= desemp_total, fill= desemp_total)) + 
+        geom_boxplot(width=0.5, col = "black", fill = "light blue") +
+          xlab (NULL) + ylab (NULL) + 
+            ggtitle("Gráfico 6: proporción de desempleados del total de trabajadores")
+
+```
+
+Según las medidas de tendencia central, la proporción media de desempleados del total de miembros de la fuerza productora de un país es de 7.45. A pesar de la existencia de valores extremos, esta no se ve radicalmente afectada por ellos. Esto se debe a que los outliers existen de ambos lados de la gráfica. Así, este valor no se separa del primer, segundo y tercer cuartil, que son 3.80, 5.59 y 9.44 respectivamente. Como podemos apreciar, en general, la proporción de desempleados no suele ser alta. Su valor máximo es de 28.47. Empero, el valor mínimo es 0.10, por lo que interpretamos que debe existir algún país en el casi toda su PEA esté empleada.
+
+Así, no hay una gran separación entre los datos. Según la desviación estándar, los datos tienen una separación de 5.36 entre sí. La diferencia entre el 25% superior de datos y el 75% restante apoya este cálculo, pues el rango intercuartílico varía muy poco en relación a ella (5.64). Adicionalmente, el boxplot nos muestra la validez de estas premisas. Notamos que la mayoría de los datos están entre un 4 y un poco menos de 10 aproximadamente, además de que los valores extremos se encuentran en el lado positivo del gráfico. Pero estos no son completamente extremos como para afectar la media (máximo valor = 28.47).
+
+#### Variable independiente "Protestas por motivos económicos"
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# Medidas de tendencia central
+summary(eco$motivo_econ)
+
+# Gráfico 2: Boxplot "Protestas por motivos económicos"
+library(tidyverse) 
+eco%>%
+   filter(!is.na(motivo_econ)) %>%
+     ggplot(aes(x= motivo_econ, fill= motivo_econ)) + 
+        geom_bar(width=0.3, col = "black", fill = "light blue") +
+          xlab (NULL) + ylab ("Cantidad de países") + 
+            ggtitle("Gráfico 7: protestas por motivos económicos")
+
+```
+
+Según el summary y el gráfico de barras, no notamos una gran diferencia entre los países en los que los episodios de protestas tuvieron una motivación económica o no. A pesar de que en los casos en los que esto sí sucede son menores que en los que no sucede y la protesta se explica por otras razones, las razones económicas no diferencian un grupo de otro. También se podría esperar que se esta clasificación esté considerando distintas situaciones como principalmente económicas, a pesar de que otros factores también puedan estar involucrados. 
+
+Por ejemplo, tomar en cuenta las controversias referentes a recursos naturales como asuntos de índole política. De ser el caso, la barra de "si se aprecia" puede haber ganado casos a su favor, pues estos conflictos sociales no se estarían considerando como disputas políticas respecto al espacio geográfico. Incluso si ese fuera el caso, lo que nos muestra la gráfica es que la diferencia entre ambas categorías no es radical, puesto que la primera "no se aprecia" sobrepasa los 45 casos, mientras que "sí se aprecia" solo alcanza los 40.
+
+**POLÍTICAS**
+
+### Variable independiente "Protesta por corrupción"
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# Medidas de tendencia central
+summary(pol$contra_corrpt)
+
+# Gráfico 2: Boxplot "Protestas por corrupción"
+library(tidyverse) 
+pol%>%
+   filter(!is.na(contra_corrpt)) %>%
+     ggplot(aes(x= contra_corrpt, fill= contra_corrpt)) + 
+        geom_bar(width=0.3, col = "black", fill = "light blue") +
+          xlab (NULL) + ylab ("Cantidad de países") + 
+            ggtitle("Gráfico 8: protestas por corrupción")
+
+```
+
+Según el summary y el gráfico de barras, notamos una diferencia significativa entre los países en los que las protestas de 2020 y 2021 tuvieron como motivo la corrupción. Mientras que los casos en los que no se aprecia son alrededor de 60, en los que sí se dan episodios de manifestación política motivados por la corrupción del sistema político, este valor sobrepasa ligeramente los 25 casos.
+
+### Variable independiente "Protesta por motivos políticos"
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# Medidas de tendencia central
+summary(pol$motivo_pol)
+
+# Gráfico 2: Boxplot "Protestas por motivos políticos"
+library(tidyverse) 
+pol%>%
+   filter(!is.na(motivo_pol)) %>%
+     ggplot(aes(x= motivo_pol, fill= motivo_pol)) + 
+        geom_bar(width=0.3, col = "black", fill = "light blue") +
+          xlab (NULL) + ylab ("Cantidad de países") + 
+            ggtitle("Gráfico 9: protestas por motivos políticos")
+
+```
+
+Según el summary y el gráfico de barras, notamos una gran diferencia entre los países en los que las protestas de 2020 y 2021 tuvieron diversos motivos políticos. Mientras que los casos en los que no se aprecia son menos de 10, en los que sí se dan episodios de movilización social por motivos políticos, este valor sobrepasa ligeramente los 80 casos. 
+
+En ese sentido, tomando en cuenta que una mayor parte de los casos en los que hubo una protesta tiene una motivación política, es probable que la interpretación de la variable independiente "protestas con motivación económica" considere casos cuya naturaleza involucra factores de distintos tipos como económicos. No obstante, esto no solo aplica en un solo sentido. También se podría considerar que la clasificación de las motivaciones "políticas" también incurre en este hecho respecto a criterios económicos y/o de otra clase.
+
+### Variable independiente "Presencia de respuesta represiva del gobierno frente a los episodios de protesta"
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# Medidas de tendencia central
+summary(pol$rptaviolenta_gob)
+
+# Gráfico 2: Boxplot "Presencia de respuesta represiva del gobierno frente a los episodios de protesta"
+library(tidyverse) 
+pol%>%
+   filter(!is.na(rptaviolenta_gob)) %>%
+     ggplot(aes(x= rptaviolenta_gob, fill= rptaviolenta_gob)) + 
+        geom_bar(width=0.3, col = "black", fill = "light blue") +
+          xlab (NULL) + ylab ("Cantidad de países") + 
+            ggtitle("Gráfico 10: presencia de respuesta represiva del gobierno frente a los episodios de protesta")
+
+```
+
+Con base en el summary y el gráfico de barras, notamos una diferencia significativa entre los países en los que hubo una respuesta violenta del gobierno frente a los episodios de protesta de 2020 y 2021. Mientras que los casos en los que no se aprecia son más de 45, en los que sí hay una respuesta represiva del gobierno frente a episodios de movilización social, este valor sobrepasa ligeramente los 35 casos. 
+
+### Variable independiente "Protesta motivada por la pandemia por COVID-19"
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# Medidas de tendencia central
+summary(pol$prot_covid)
+
+# Gráfico 2: Boxplot "Protesta motivada por la pandemia por COVID-19"
+library(tidyverse) 
+pol%>%
+   filter(!is.na(prot_covid)) %>%
+     ggplot(aes(x= prot_covid, fill= prot_covid)) + 
+        geom_bar(width=0.3, col = "black", fill = "light blue") +
+          xlab (NULL) + ylab ("Cantidad de países") + 
+            ggtitle("Gráfico 11: protesta motivada por la pandemia por COVID-19")
+
+```
+
+El summary y el gráfico de barras nos demuestran que existe una diferencia significativa entre los países en los que la protesta estuvo motivada por razones relacionadas a la pandemia por COVID19 y en los que no. Mientras que los casos en los que no se aprecia son más de 60, en los que los episodios de protesta durante 2020 y 2021 sí están motivados por asuntos afines al COVID-19, este valor sobrepasa ligeramente los 20 casos.
+
+### Variable independiente "Índice de probidad del gobierno"
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# Medidas de tendencia central
+summary(pol$probidad_gob)
+
+# Medidas de dispersión
+sd(pol$probidad_gob, na.rm = T)
+IQR(pol$probidad_gob, na.rm = T)
+
+# Gráfico 2: Boxplot "Índice de probidad del gobierno"
+library(tidyverse) 
+pol%>%
+   filter(!is.na(probidad_gob)) %>%
+     ggplot(aes(x= probidad_gob, fill= probidad_gob)) + 
+        geom_boxplot(width=0.3, col = "black", fill = "light blue") +
+          xlab (NULL) + ylab (NULL) + 
+            ggtitle("Gráfico 12: índice de probidad del gobierno")
+
+```
+
+Según la media, el promedio del índice de probidad del gobierno es de 45.60 sobre 100. Este sitúa a los países analizados en un valor, principalmente, medio-bajo en función a qué tan probos son los líderes políticos que los dirigen. Sin embargo, las puntuaciones no solo se encuentran en un lado característico del gráfico. Según el boxplot, aunque la mayor parte de los casos se encuentra entre los 35 y un poco más de 50 puntos, el máximo llega hasta 97.20, mientras que el mínimo solo obtuvo 11.50. En ese sentido, notamos que la separación entre los datos de esta variable es amplia. Esto se confirma en los valores de los cuartiles, puesto que el 25% del límite superior de los datos obtiene 31.02 puntos sobre 100, el 50% llega a 39.85 y, el 75% escala gasta 54.17. 
+
+Frente a ello, notamos una asimetría positiva, que se sustenta en una desviación estándar de 20.83 y un rango intercuartílico de 23.12. Aquello significa que, a pesar de que existe una cantidad de países que tienen una buena calificación en probidad gubernamental, encontramos otros que caen a valores tan bajos, alrededor de 10 puntos aproximadamente. Con todo, la mayor parte de países se encuentra en un nivel medio, pero, aún así, por la contextura ancha de las cajas, podemos notar que tienen una diferencia de puntaje considerable entre sí.
+
+*______________________________________________________________________________________________________________________________
+
+### POSIBLES PRUEBAS ESTADÍSTICAS A UTILIZAR EN ESTE ESTUDIO
+
+Debido a que este trabajo busca conocer cuáles fueron los factores que influyeron de manera considerable en la ocurrencia de episodios de protesta pública durante los años de la pandemia por COVID-19 (2020-2021), proponemos dos modelos estadísticos en función a las variables dependientes.
+
+En primer lugar, queremos conocer la probabilidad de "ocurrencia de episodios de protesta pública" sobre la posibilidad de que estos no sucedan. Por lo tanto, la variable dependiente es de tipo nominal y tiene dos niveles: hubo protestas y no hubo protestas (durante 2020 y 2021). En ese sentido, sostenemos que la prueba estadística más conveniente según estas características, propias de una variable dicotómica, es un modelo de regresión logística binomial. 
+
+En segundo lugar, también buscamos averiguar qué condiciones impactaron considerablemente en la duración acumulada en semanas de los episodios de protesta de 2020 y 2021. La variable dependiente en este caso es de tipo numérica y continua. Además, vamos a considerar más de un criterio predictor en función a distintos factores económicos y políticos. Entonces, sustentamos que la prueba estadística más conveniente según estas características es un modelo de regresión lineal múltiple.
+
+______________________________________________________________________________________________________________________________*
+
+### BIBLIOGRAFÍA
+
+BBC NEWS Mundo
+En imágenes: así se vivieron las protestas y marchas en el mundo por el Día de los Trabajadores a pesar del coronavirus. Consulta: 31 de octubre. En imágenes: así se vivieron las protestas y marchas en el mundo por el Día de los Trabajadores a pesar del coronavirus
+
+BILLION, Didier y Christophe VENTURA
+2020    ¿Por qué protesta tanta gente a la vez? Nueva Sociedad. No 286, marzo-abril.
+
+DW Actualidad
+Vuelven las protestas violentas en Santiago de Chile a pesar del confinamiento. Consulta: 31 de octubre. Vuelven las protestas violentas en Santiago de Chile a pesar del confinamiento | Chile en DW
+
+HUERTA, E. (2020, noviembre 16). Los eventos al aire libre y el riesgo de COVID-19. El Comercio. Recuperado de Los eventos al aire libre y el riesgo de COVID-19
+
+JIMENEZ-YAÑEZ, César
+2020    #Chiledespertó: causas del estallido social en Chile. Revista Mexicana de Sociologí­a, 82(4).
+
+Rabin, R. C. (2020, junio 2). Los riesgos de protestar durante una pandemia. The New York Times. Recuperado de Los riesgos de protestar durante una pandemia
+
+ORTIZ, Isabel, Sara BURKE, Mohamed BERRADA y Hernán CORTES
+2013    World Protests 2006-2013. New York: Friedrich-Ebert-Stiftung New York Office
